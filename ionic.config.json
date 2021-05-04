@@ -1,0 +1,7 @@
+{
+  "name": "jaegar-resto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
