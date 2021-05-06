@@ -1,0 +1,17 @@
+.home-header-menu-item-container {
+  padding: 0;
+}
+
+.home-header-menu-item {
+  font-family: Barlow;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  padding: 1rem 0;
+  background-color: transparent;
+
+  @media screen and (max-width: 450px) {
+    text-align: center;
+  }
+}

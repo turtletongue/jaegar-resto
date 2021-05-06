@@ -16,7 +16,7 @@ const MenuItem = ({
   onClick,
 }: MenuItemProps) => {
   return (
-    <div
+    <button
       onClick={onClick}
       style={{
         backgroundImage: selected ? `url(${ActiveMenuItem})` : undefined,
@@ -33,7 +33,7 @@ const MenuItem = ({
           className="menu-item-icon"
         />
       </div>
-    </div>
+    </button>
   );
 };
 
