@@ -1,0 +1,62 @@
+.summary-card-bg {
+  background: #1f1d2b;
+  max-width: 14rem;
+  height: 9.5rem;
+  border-radius: 0.8rem;
+}
+
+.coin-icon-bg {
+  background: rgba(146, 136, 224, 0.1);
+  border-radius: 0.4rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coin-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.arrow-up-icon-bg {
+  background: rgba(136, 224, 145, 0.24);
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-up-icon {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.summary-card-row {
+  align-items: center;
+}
+
+.summary-card-text {
+  font-family: Barlow;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.summary-card-growth-rate {
+  color: #50d1aa;
+  font-size: 0.8rem;
+}
+
+.summary-card-total {
+  font-weight: 600;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.summary-card-total-revenue {
+  color: #abbbc2;
+  padding-top: 0.6rem;
+}

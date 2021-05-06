@@ -1,0 +1,16 @@
+.to-go-button {
+  background: #1f1d2b;
+  border-radius: 0.6rem;
+  width: 4rem;
+  height: 2rem;
+  color: #ea7c69;
+  font-family: Barlow;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-top: 0.2rem;
+  transition: all 0.65s ease-in-out;
+
+  &:hover {
+    background: #272436;
+  }
+}

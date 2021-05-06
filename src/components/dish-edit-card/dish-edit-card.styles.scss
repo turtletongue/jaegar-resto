@@ -1,0 +1,29 @@
+.dish-edit-card-bg {
+  background: #1f1d2b;
+  max-width: 14rem;
+  height: 17rem;
+  border-radius: 0.8rem;
+}
+
+.dish-edit-card-content {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dish-edit-card-data-container {
+  width: 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dish-edit-card-text {
+  font-family: Barlow;
+  font-weight: 400;
+  color: #abbbc2;
+}

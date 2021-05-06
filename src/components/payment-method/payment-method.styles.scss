@@ -1,0 +1,35 @@
+.payment-method-bg {
+  background: #252836;
+  width: 8rem;
+  height: 5rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.payment-method-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-method-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.payment-method-icon-checkmark {
+  position: absolute;
+  right: 0.3rem;
+  top: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.payment-method-text {
+  padding-top: 0.4rem;
+  color: white;
+  font-weight: 400;
+  font-family: Barlow;
+  font-size: 1rem;
+}

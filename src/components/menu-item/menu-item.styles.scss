@@ -1,0 +1,25 @@
+.menu-item-container {
+  width: 4.3rem;
+  height: 4.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item-bg {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}

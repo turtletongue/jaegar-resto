@@ -1,0 +1,16 @@
+.hot-dishes-button {
+  background: #ea7c69;
+  border-radius: 0.6rem;
+  width: 6rem;
+  height: 2rem;
+  color: white;
+  font-family: Barlow;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-top: 0.2rem;
+  transition: all 0.65s ease-in-out;
+
+  &:hover {
+    background: #e06d59;
+  }
+}

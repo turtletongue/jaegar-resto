@@ -1,0 +1,30 @@
+.cart-item-container {
+  max-width: 27rem;
+  margin: 0;
+}
+
+.cart-item-row {
+  align-items: center;
+}
+
+.cart-item-text {
+  font-family: Barlow;
+  font-weight: 400;
+  font-size: 1rem;
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.cart-item-title {
+  font-weight: 500;
+  color: #3b5162;
+}
+
+.cart-item-price {
+  color: #889898;
+}
+
+.cart-item-total {
+  color: #3b5162;
+  font-size: 1.1rem;
+}

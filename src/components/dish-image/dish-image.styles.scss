@@ -1,0 +1,12 @@
+.dish-img {
+  position: absolute;
+  max-height: 8rem;
+  max-width: 8rem;
+  clip-path: circle(47%);
+}
+
+.dish-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

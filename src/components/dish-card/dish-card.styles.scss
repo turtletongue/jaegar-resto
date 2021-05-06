@@ -1,0 +1,31 @@
+.dish-card-bg {
+  background: #1f1d2b;
+  max-width: 11rem;
+  height: 13rem;
+  border-radius: 1.5rem;
+  overflow: initial;
+}
+
+.dish-card-content {
+  text-align: center;
+  position: relative;
+  top: 45%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dish-card-text {
+  display: block;
+  font-family: Barlow;
+  font-weight: 400;
+}
+
+.dish-card-price {
+  color: white;
+}
+
+.dish-card-count {
+  color: #abbbc2;
+}

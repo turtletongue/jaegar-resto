@@ -1,0 +1,28 @@
+.dish-edit-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(234, 124, 105, 0.34);
+  transition: all 0.35s ease-in-out;
+
+  &:hover {
+    background: rgba(234, 124, 105, 0.44);
+  }
+}
+
+.dish-edit-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dish-edit-button-text {
+  color: #ea7c69;
+  font-family: Barlow;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 0.5rem;
+}

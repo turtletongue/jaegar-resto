@@ -1,0 +1,15 @@
+.logo-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: rgba(235, 150, 106, 0.26);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-image {
+  width: 2rem;
+  height: 2rem;
+}
