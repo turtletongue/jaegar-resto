@@ -1,11 +1,11 @@
 import { IonCol, IonGrid, IonRow, IonText, isPlatform } from "@ionic/react";
-import { useState } from "react";
+import { useSelectedCategory } from "../../redux/hooks";
 import HomeHeaderMenuItem from "../home-header-menu-item/home-header-menu-item.component";
 import Searchbar from "../searchbar/searchbar.component";
 import "./home-header.styles.scss";
 
 const HomeHeader = () => {
-  const [selectedItem, setSelectedItem] = useState("hot");
+  const { selectedCategory, setSelectedCategory } = useSelectedCategory();
   return (
     <IonGrid>
       <IonRow className="home-header-row">
@@ -21,28 +21,28 @@ const HomeHeader = () => {
       <IonRow className="home-header-row home-header-row-line">
         <HomeHeaderMenuItem
           text="Hot"
-          selected={selectedItem === "hot"}
-          onClick={() => setSelectedItem("hot")}
+          selected={selectedCategory === "hot"}
+          onClick={() => setSelectedCategory("hot")}
         />
         <HomeHeaderMenuItem
           text="Cold"
-          selected={selectedItem === "cold"}
-          onClick={() => setSelectedItem("cold")}
+          selected={selectedCategory === "cold"}
+          onClick={() => setSelectedCategory("cold")}
         />
         <HomeHeaderMenuItem
           text="Soup"
-          selected={selectedItem === "soup"}
-          onClick={() => setSelectedItem("soup")}
+          selected={selectedCategory === "soup"}
+          onClick={() => setSelectedCategory("soup")}
         />
         <HomeHeaderMenuItem
           text="Grill"
-          selected={selectedItem === "grill"}
-          onClick={() => setSelectedItem("grill")}
+          selected={selectedCategory === "grill"}
+          onClick={() => setSelectedCategory("grill")}
         />
         <HomeHeaderMenuItem
           text="Dessert"
-          selected={selectedItem === "dessert"}
-          onClick={() => setSelectedItem("dessert")}
+          selected={selectedCategory === "dessert"}
+          onClick={() => setSelectedCategory("dessert")}
         />
       </IonRow>
     </IonGrid>

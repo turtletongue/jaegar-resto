@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import Dashboard from "../../icons/dashboard.svg";
 import Discount from "../../icons/discount.svg";
 import FillDashboard from "../../icons/fill-dashboard.svg";
@@ -12,51 +12,64 @@ import Logout from "../../icons/log-out.svg";
 import Message from "../../icons/message.svg";
 import Notification from "../../icons/notification.svg";
 import Settings from "../../icons/settings.svg";
+import { useActiveTab } from "../../redux/hooks";
 import Logo from "../logo/logo.component";
 import MenuItem from "../menu-item/menu-item.component";
 import "./left-menu.styles.scss";
 
 const LeftMenu = () => {
-  const [selectedItem, setSelectedItem] = useState("home");
+  const { activeTab, setActiveTab } = useActiveTab();
   return (
     <div className="left-menu-bg">
       <Logo />
-      <MenuItem
-        selectedIcon={Home}
-        normalIcon={FillHome}
-        selected={selectedItem === "home"}
-        onClick={() => setSelectedItem("home")}
-      />
-      <MenuItem
-        selectedIcon={Discount}
-        normalIcon={FillDiscount}
-        selected={selectedItem === "discount"}
-        onClick={() => setSelectedItem("discount")}
-      />
-      <MenuItem
-        selectedIcon={Dashboard}
-        normalIcon={FillDashboard}
-        selected={selectedItem === "dashboard"}
-        onClick={() => setSelectedItem("dashboard")}
-      />
-      <MenuItem
-        selectedIcon={Message}
-        normalIcon={FillMessage}
-        selected={selectedItem === "message"}
-        onClick={() => setSelectedItem("message")}
-      />
-      <MenuItem
-        selectedIcon={Notification}
-        normalIcon={FillNotification}
-        selected={selectedItem === "notification"}
-        onClick={() => setSelectedItem("notification")}
-      />
-      <MenuItem
-        selectedIcon={Settings}
-        normalIcon={FillSettings}
-        selected={selectedItem === "settings"}
-        onClick={() => setSelectedItem("settings")}
-      />
+      <Link to="/home">
+        <MenuItem
+          selectedIcon={Home}
+          normalIcon={FillHome}
+          selected={activeTab === "home"}
+          onClick={() => setActiveTab("home")}
+        />
+      </Link>
+      <Link to="/discount">
+        <MenuItem
+          selectedIcon={Discount}
+          normalIcon={FillDiscount}
+          selected={activeTab === "discount"}
+          onClick={() => setActiveTab("discount")}
+        />
+      </Link>
+      <Link to="/dashboard">
+        <MenuItem
+          selectedIcon={Dashboard}
+          normalIcon={FillDashboard}
+          selected={activeTab === "dashboard"}
+          onClick={() => setActiveTab("dashboard")}
+        />
+      </Link>
+      <Link to="/message">
+        <MenuItem
+          selectedIcon={Message}
+          normalIcon={FillMessage}
+          selected={activeTab === "message"}
+          onClick={() => setActiveTab("message")}
+        />
+      </Link>
+      <Link to="/notification">
+        <MenuItem
+          selectedIcon={Notification}
+          normalIcon={FillNotification}
+          selected={activeTab === "notification"}
+          onClick={() => setActiveTab("notification")}
+        />
+      </Link>
+      <Link to="/settings">
+        <MenuItem
+          selectedIcon={Settings}
+          normalIcon={FillSettings}
+          selected={activeTab === "settings"}
+          onClick={() => setActiveTab("settings")}
+        />
+      </Link>
       <MenuItem normalIcon={Logout} />
     </div>
   );

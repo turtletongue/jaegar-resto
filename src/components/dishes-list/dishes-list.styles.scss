@@ -1,0 +1,38 @@
+.dishes-list-container {
+  height: calc(100vh - 9rem);
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.dishes-list-grid {
+  padding: 0;
+}
+
+.dishes-list-row {
+  padding: 2rem 0;
+}
+
+.dishes-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.dishes-list-text {
+  font-family: Barlow;
+  font-weight: 400;
+  color: white;
+  font-size: 1rem;
+}
+
+.dishes-list-header-text {
+  font-weight: 500;
+  font-size: 1.2rem;
+}

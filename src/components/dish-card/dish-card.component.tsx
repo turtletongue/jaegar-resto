@@ -1,21 +1,24 @@
 import { IonCard, IonCardContent, IonText } from "@ionic/react";
+import Dish from "../../interfaces/Dish";
 import DishImage from "../dish-image/dish-image.component";
 import DishTitle from "../dish-title/dish-title.component";
 import "./dish-card.styles.scss";
 
-const DishCard = () => {
+interface DishCardProps {
+  dish: Dish;
+}
+
+const DishCard = ({ dish }: DishCardProps) => {
   return (
     <IonCard className="dish-card-bg">
-      <DishImage
-        src="https://i.ibb.co/C1fjm30/65002905c5ac0e408510b6fe534bf49e.png"
-        alt="dish"
-        bottom="55%"
-      />
+      <DishImage src={dish.imageUrl} alt={dish.title} bottom="55%" />
       <IonCardContent className="dish-card-content">
-        <DishTitle>Spicy seasoned seafood noodles</DishTitle>
-        <IonText className="dish-card-text dish-card-price">$2.29</IonText>
+        <DishTitle>{dish.title}</DishTitle>
+        <IonText className="dish-card-text dish-card-price">
+          ${dish.price}
+        </IonText>
         <IonText className="dish-card-text dish-card-count">
-          20 Bowls available
+          {dish.count} Bowl{dish.count > 1 ? "s" : ""} available
         </IonText>
       </IonCardContent>
     </IonCard>
