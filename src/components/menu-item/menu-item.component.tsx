@@ -25,7 +25,12 @@ const MenuItem = ({
     >
       <div
         className="menu-item-bg"
-        style={{ background: selected ? "#EA7C69" : undefined }}
+        style={{
+          background: selected ? "#EA7C69" : undefined,
+          boxShadow: selected
+            ? "0 8px 24px rgba(234, 124, 105, 0.32)"
+            : undefined,
+        }}
       >
         <IonImg
           src={selected ? selectedIcon : normalIcon}

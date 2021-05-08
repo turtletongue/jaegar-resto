@@ -1,9 +1,11 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { DineType } from "../interfaces/DineType";
 import {
   Category,
   changeSelectedCategory,
 } from "./categories/categories.slice";
 import { changeActiveTab, Tab } from "./left-menu/left-menu.slice";
+import { changeDineType } from "./order/order.slice";
 import { AppDispatch, RootState } from "./store";
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();
@@ -29,4 +31,14 @@ export const useSelectedCategory = () => {
   };
 
   return { selectedCategory, setSelectedCategory };
+};
+
+export const useDineType = () => {
+  const dispatch = useDispatch();
+  const dineType = useAppSelector((state) => state.order.dineType);
+  const setDineType = (dineType: DineType) => {
+    dispatch(changeDineType(dineType));
+  };
+
+  return { dineType, setDineType };
 };
