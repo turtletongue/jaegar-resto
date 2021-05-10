@@ -9,6 +9,8 @@ interface ButtonProps {
   width?: string;
   height?: string;
   boxShadow?: string;
+  opacity?: string;
+  visibility?: VisibilityState;
   onClick?: () => void;
 }
 
@@ -20,6 +22,8 @@ const Button = ({
   width,
   height,
   boxShadow,
+  opacity,
+  visibility,
   onClick,
 }: ButtonProps) => {
   return (
@@ -28,7 +32,7 @@ const Button = ({
       className={
         (type === "outline" ? "button-outline" : "button-primary") + " button"
       }
-      style={{ border, width, height, boxShadow }}
+      style={{ border, width, height, boxShadow, visibility, opacity }}
     >
       {icon && <IonImg src={icon} alt="icon" className="button-icon" />}
       {children && (

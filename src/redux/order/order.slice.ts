@@ -22,7 +22,7 @@ const orderSlice = createSlice({
     },
     addOrderItem: (state, action: PayloadAction<Dish>) => {
       const existingIndex = state.orderItems.findIndex(
-        (orderItem) => orderItem._id === action.payload._id
+        (orderItem) => orderItem.item._id === action.payload._id
       );
 
       if (existingIndex !== -1) {
@@ -36,21 +36,17 @@ const orderSlice = createSlice({
         });
       }
     },
-    incrementQty: (state, action: PayloadAction<number>) => {
-      if (state.orderItems[action.payload]) {
-        state.orderItems[action.payload].qty++;
-      }
-    },
-    decrementQty: (state, action: PayloadAction<number>) => {
-      if (state.orderItems[action.payload]) {
-        state.orderItems[action.payload].qty--;
-      }
+    changeQty: (state, action: PayloadAction<{ id: number; qty: number }>) => {
+      const { id, qty } = action.payload;
+      state.orderItems = state.orderItems.map((orderItem) =>
+        orderItem._id === id ? { ...orderItem, qty } : orderItem
+      );
     },
     addNote: (state, action: PayloadAction<{ id: number; note: string }>) => {
       const { id, note } = action.payload;
-      if (state.orderItems[id]) {
-        state.orderItems[id].note = note;
-      }
+      state.orderItems = state.orderItems.map((orderItem) =>
+        orderItem._id === id ? { ...orderItem, note } : orderItem
+      );
     },
     removeOrderItem: (state, action: PayloadAction<number>) => {
       state.orderItems = state.orderItems.filter(
@@ -60,5 +56,11 @@ const orderSlice = createSlice({
   },
 });
 
-export const { changeDineType, addOrderItem, addNote } = orderSlice.actions;
+export const {
+  changeDineType,
+  addOrderItem,
+  addNote,
+  changeQty,
+  removeOrderItem,
+} = orderSlice.actions;
 export default orderSlice.reducer;

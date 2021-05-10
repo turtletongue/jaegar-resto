@@ -5,6 +5,7 @@ export default interface Dish {
   title: string;
   price: number;
   count: number;
+  discount: number;
   category: Category;
   imageUrl: string;
 }

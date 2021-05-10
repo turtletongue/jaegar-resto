@@ -6,6 +6,8 @@
   padding: 1rem;
   border-radius: 0.5rem;
   margin: 0;
+
+  transition: visibility 0s, opacity 0.85s ease-out;
 }
 
 .button-text {

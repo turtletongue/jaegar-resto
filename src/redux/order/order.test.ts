@@ -28,6 +28,7 @@ describe("order reducer", () => {
           _id: 1,
           title: "Spicy seasoned seafood noodles",
           price: 2.29,
+          discount: 0,
           count: 20,
           category: "hot",
           imageUrl:
@@ -42,6 +43,7 @@ describe("order reducer", () => {
             _id: 1,
             title: "Spicy seasoned seafood noodles",
             price: 2.29,
+            discount: 0,
             count: 20,
             category: "hot",
             imageUrl:
@@ -61,9 +63,10 @@ describe("order reducer", () => {
         {
           _id: 0,
           item: {
-            _id: 1,
+            _id: 0,
             title: "Spicy seasoned seafood noodles",
             price: 2.29,
+            discount: 0,
             count: 20,
             category: "hot",
             imageUrl:
@@ -83,6 +86,7 @@ describe("order reducer", () => {
           _id: 0,
           title: "Spicy seasoned seafood noodles",
           price: 2.29,
+          discount: 0,
           count: 20,
           category: "hot",
           imageUrl:
@@ -94,9 +98,10 @@ describe("order reducer", () => {
         {
           _id: 0,
           item: {
-            _id: 1,
+            _id: 0,
             title: "Spicy seasoned seafood noodles",
             price: 2.29,
+            discount: 0,
             count: 20,
             category: "hot",
             imageUrl:
@@ -110,7 +115,7 @@ describe("order reducer", () => {
     });
   });
 
-  it("should increment qty of order item", () => {
+  it("should change qty of order item", () => {
     const mockState: OrderState = {
       orderItems: [
         {
@@ -119,6 +124,7 @@ describe("order reducer", () => {
             _id: 1,
             title: "Spicy seasoned seafood noodles",
             price: 2.29,
+            discount: 0,
             count: 20,
             category: "hot",
             imageUrl:
@@ -132,7 +138,10 @@ describe("order reducer", () => {
     };
 
     expect(
-      orderReducer(mockState, { type: "order/incrementQty", payload: 0 })
+      orderReducer(mockState, {
+        type: "order/changeQty",
+        payload: { id: 0, qty: 2 },
+      })
     ).toEqual({
       orderItems: [
         {
@@ -141,56 +150,13 @@ describe("order reducer", () => {
             _id: 1,
             title: "Spicy seasoned seafood noodles",
             price: 2.29,
+            discount: 0,
             count: 20,
             category: "hot",
             imageUrl:
               "https://i.ibb.co/C1fjm30/65002905c5ac0e408510b6fe534bf49e.png",
           },
           qty: 2,
-          note: "",
-        },
-      ],
-      dineType: "Dine In",
-    });
-  });
-
-  it("should decrement qty of order item", () => {
-    const mockState: OrderState = {
-      orderItems: [
-        {
-          _id: 0,
-          item: {
-            _id: 1,
-            title: "Spicy seasoned seafood noodles",
-            price: 2.29,
-            count: 20,
-            category: "hot",
-            imageUrl:
-              "https://i.ibb.co/C1fjm30/65002905c5ac0e408510b6fe534bf49e.png",
-          },
-          qty: 2,
-          note: "",
-        },
-      ],
-      dineType: "Dine In",
-    };
-
-    expect(
-      orderReducer(mockState, { type: "order/decrementQty", payload: 0 })
-    ).toEqual({
-      orderItems: [
-        {
-          _id: 0,
-          item: {
-            _id: 1,
-            title: "Spicy seasoned seafood noodles",
-            price: 2.29,
-            count: 20,
-            category: "hot",
-            imageUrl:
-              "https://i.ibb.co/C1fjm30/65002905c5ac0e408510b6fe534bf49e.png",
-          },
-          qty: 1,
           note: "",
         },
       ],
@@ -207,6 +173,7 @@ describe("order reducer", () => {
             _id: 1,
             title: "Spicy seasoned seafood noodles",
             price: 2.29,
+            discount: 0,
             count: 20,
             category: "hot",
             imageUrl:
@@ -232,6 +199,7 @@ describe("order reducer", () => {
             _id: 1,
             title: "Spicy seasoned seafood noodles",
             price: 2.29,
+            discount: 0,
             count: 20,
             category: "hot",
             imageUrl:
@@ -254,6 +222,7 @@ describe("order reducer", () => {
             _id: 1,
             title: "Spicy seasoned seafood noodles",
             price: 2.29,
+            discount: 0,
             count: 20,
             category: "hot",
             imageUrl:

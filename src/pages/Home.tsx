@@ -10,10 +10,20 @@ import Cart from "../components/cart/cart.component";
 import DishesList from "../components/dishes-list/dishes-list.component";
 import HomeHeader from "../components/home-header/home-header.component";
 import LeftMenu from "../components/left-menu/left-menu.component";
+import { useDineType, useOrderItems } from "../redux/hooks";
 import { dishes } from "../test-data/data";
 import "./Home.scss";
 
 const Home = () => {
+  // TODO: async thunk to get and calc order id
+  const orderId = 34562;
+  const { dineType, setDineType } = useDineType();
+  const {
+    orderItems,
+    deleteOrderItem,
+    addOrderItemNote,
+    setQty,
+  } = useOrderItems();
   return (
     <IonPage>
       <IonContent fullscreen>
@@ -27,7 +37,15 @@ const Home = () => {
               </IonCol>
               {!isPlatform("mobile") && (
                 <IonCol className="home-col" size="4">
-                  <Cart />
+                  <Cart
+                    orderId={orderId}
+                    dineType={dineType}
+                    setDineType={setDineType}
+                    orderItems={orderItems}
+                    deleteOrderItem={deleteOrderItem}
+                    setQty={setQty}
+                    addOrderItemNote={addOrderItemNote}
+                  />
                 </IonCol>
               )}
             </IonRow>

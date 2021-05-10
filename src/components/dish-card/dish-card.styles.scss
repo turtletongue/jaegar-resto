@@ -6,6 +6,11 @@
   overflow: initial;
   min-width: 11rem;
   margin: 1.5rem auto;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 9px 24px rgba(234, 124, 105, 0.3);
+  }
 }
 
 .dish-card-content {

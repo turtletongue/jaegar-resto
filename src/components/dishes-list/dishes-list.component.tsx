@@ -1,6 +1,6 @@
 import { IonCol, IonGrid, IonRow, IonText } from "@ionic/react";
 import Dish from "../../interfaces/Dish";
-import { useSelectedCategory } from "../../redux/hooks";
+import { useSearchbar, useSelectedCategory } from "../../redux/hooks";
 import DishCard from "../dish-card/dish-card.component";
 import Dropdown from "../dropdown/dropdown.component";
 import "./dishes-list.styles.scss";
@@ -11,6 +11,7 @@ interface DishesListProps {
 
 const DishesList = ({ dishes }: DishesListProps) => {
   const { selectedCategory } = useSelectedCategory();
+  const { value } = useSearchbar();
   return (
     <div className="dishes-list-container">
       <div className="dishes-list-header">
@@ -22,7 +23,11 @@ const DishesList = ({ dishes }: DishesListProps) => {
       <IonGrid className="dishes-list-grid">
         <IonRow className="dishes-list-row">
           {dishes
-            .filter((dish: Dish) => dish.category === selectedCategory)
+            .filter(
+              (dish: Dish) =>
+                dish.category === selectedCategory &&
+                dish.title.toLowerCase().includes(value.toLowerCase())
+            )
             .map((dish: Dish) => {
               return (
                 <IonCol key={dish._id}>

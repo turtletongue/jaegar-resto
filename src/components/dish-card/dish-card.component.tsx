@@ -1,5 +1,6 @@
 import { IonCard, IonCardContent, IonText } from "@ionic/react";
 import Dish from "../../interfaces/Dish";
+import { useOrderItems } from "../../redux/hooks";
 import DishImage from "../dish-image/dish-image.component";
 import DishTitle from "../dish-title/dish-title.component";
 import "./dish-card.styles.scss";
@@ -9,8 +10,9 @@ interface DishCardProps {
 }
 
 const DishCard = ({ dish }: DishCardProps) => {
+  const { appendOrderItem } = useOrderItems();
   return (
-    <IonCard className="dish-card-bg">
+    <IonCard className="dish-card-bg" onClick={() => appendOrderItem(dish)}>
       <DishImage src={dish.imageUrl} alt={dish.title} bottom="55%" />
       <IonCardContent className="dish-card-content">
         <DishTitle>{dish.title}</DishTitle>

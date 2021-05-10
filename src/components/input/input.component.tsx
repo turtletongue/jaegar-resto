@@ -11,11 +11,17 @@ interface InputProps {
   value?: string | number;
   width?: string;
   height?: string;
+  onChange?: (event: CustomEvent) => void;
 }
 
-const Input = ({ width, height, ...otherProps }: InputProps) => {
+const Input = ({ width, height, onChange, ...otherProps }: InputProps) => {
   return (
-    <IonInput {...otherProps} className="input" style={{ width, height }} />
+    <IonInput
+      {...otherProps}
+      className="input"
+      style={{ width, height }}
+      onIonChange={onChange}
+    />
   );
 };
 

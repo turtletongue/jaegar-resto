@@ -36,3 +36,15 @@
 .cart-text-item {
   color: #abbbc2;
 }
+
+.cart-head-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 0.5rem;
+}
+
+.cart-close-icon {
+  width: 1.2rem;
+  max-height: 1.2rem;
+}
