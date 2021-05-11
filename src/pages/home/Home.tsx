@@ -6,12 +6,13 @@ import {
   IonRow,
   isPlatform,
 } from "@ionic/react";
-import Cart from "../components/cart/cart.component";
-import DishesList from "../components/dishes-list/dishes-list.component";
-import HomeHeader from "../components/home-header/home-header.component";
-import LeftMenu from "../components/left-menu/left-menu.component";
-import { useDineType, useOrderItems } from "../redux/hooks";
-import { dishes } from "../test-data/data";
+import { useEffect } from "react";
+import Cart from "../../components/cart/cart.component";
+import DishesList from "../../components/dishes-list/dishes-list.component";
+import HomeHeader from "../../components/home-header/home-header.component";
+import LeftMenu from "../../components/left-menu/left-menu.component";
+import { useActiveTab, useDineType, useOrderItems } from "../../redux/hooks";
+import { dishes } from "../../test-data/data";
 import "./Home.scss";
 
 const Home = () => {
@@ -24,6 +25,10 @@ const Home = () => {
     addOrderItemNote,
     setQty,
   } = useOrderItems();
+  const { setActiveTab } = useActiveTab();
+  useEffect(() => {
+    setActiveTab("home");
+  }, []);
   return (
     <IonPage>
       <IonContent fullscreen>

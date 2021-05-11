@@ -29,7 +29,7 @@ const orderSlice = createSlice({
         state.orderItems[existingIndex].qty++;
       } else {
         state.orderItems.push({
-          _id: state.orderItems.length + 1,
+          _id: state.orderItems[state.orderItems.length - 1]?._id + 1 || 1,
           item: action.payload,
           qty: 1,
           note: "",

@@ -16,7 +16,12 @@ import "@ionic/react/css/typography.css";
 import { Provider } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
 import "./App.scss";
-import Home from "./pages/Home";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Discount from "./pages/discount/Discount";
+import Home from "./pages/home/Home";
+import Messages from "./pages/messages/Messages";
+import Notifications from "./pages/notifications/Notification";
+import Settings from "./pages/settings/Settings";
 import store from "./redux/store";
 /* Theme variables */
 import "./theme/variables.css";
@@ -25,9 +30,24 @@ const App = () => (
   <IonApp>
     <Provider store={store}>
       <IonReactRouter>
-        <IonRouterOutlet>
+        <IonRouterOutlet animated={false}>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path="/discount">
+            <Discount />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route exact path="/messages">
+            <Messages />
+          </Route>
+          <Route exact path="/notifications">
+            <Notifications />
+          </Route>
+          <Route exact path="/settings">
+            <Settings />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />

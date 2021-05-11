@@ -46,7 +46,7 @@ const LeftMenu = () => {
           onClick={() => setActiveTab("dashboard")}
         />
       </Link>
-      <Link to="/message">
+      <Link to="/messages">
         <MenuItem
           selectedIcon={Message}
           normalIcon={FillMessage}
@@ -54,7 +54,7 @@ const LeftMenu = () => {
           onClick={() => setActiveTab("message")}
         />
       </Link>
-      <Link to="/notification">
+      <Link to="/notifications">
         <MenuItem
           selectedIcon={Notification}
           normalIcon={FillNotification}
